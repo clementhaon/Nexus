@@ -4,7 +4,7 @@ import http from 'http';
 import middlewares from './app/core/middlewares.js';
 import express from 'express';
 import cors from 'cors';
-import Router from './models/router.js';
+import Router from './app/controller/router.js';
 const PORT = process.env.port || 3000;
 
 

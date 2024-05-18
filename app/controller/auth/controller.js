@@ -1,5 +1,5 @@
 import express from "express";
-import models from "../index.js";
+import models from "../../models/index.js";
 import jsonwebtoken from "jsonwebtoken";
 const app = express.Router();
 import dotenv from 'dotenv'

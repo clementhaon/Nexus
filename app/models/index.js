@@ -1,5 +1,4 @@
 import Sequelize from "sequelize";
-import * as db from "../app/config/index.js";
 import user from "./users/model.js";
 import pictures from "./pictures/model.js";
 import soft_skills from "./soft_skills/model.js";

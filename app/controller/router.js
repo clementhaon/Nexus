@@ -7,7 +7,7 @@ const Router = express.Router();
 Router.use('/auth', auth);
 
 
-import isAuthorized from "../app/core/auth.js";
+import isAuthorized from "../core/auth.js";
 
 
 Router.use('/user', isAuthorized, user);

@@ -1,5 +1,5 @@
 import jsonwebtoken from"jsonwebtoken";
-import models from "../../models/index.js";
+import models from "../models/index.js";
 import dotenv from 'dotenv'
 dotenv.config()
 import * as config from "../config/index.js";

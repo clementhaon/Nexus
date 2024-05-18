@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 //const email = require('../../app/utils/email'); TODO update to import and create email index and template
 import generator from "generate-password";
 import models from '../index.js';
-import * as config from "../../app/config/index.js";
+import * as config from "../../config/index.js";
 config.getConfig();
 import dotenv from 'dotenv'
 dotenv.config({ silent: true });
