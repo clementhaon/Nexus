@@ -15,7 +15,11 @@ const register = async (req, res) => {
         if (!req.body) throw new Error("missing params");
         if (!req.body.email) throw new Error("missing params");
         if (!req.body.password) throw new Error("missing params");
-        if (!req.body.pseudo) throw new Error("missing params");
+        if (!req.body.lastname) throw new Error("missing params");
+        if (!req.body.firstname) throw new Error("missing params");
+        if (!req.body.gender) throw new Error("missing params");
+        if (!req.body.description) throw new Error("missing params");
+        if (!req.body.nationality) throw new Error("missing params");
         if (!req.body.birthday) throw new Error("missing params");
         if (!req.body.validCGU) throw new Error("missing params");
         if (!req.body.validPrivacyPolicy) throw new Error("missing params");
@@ -24,17 +28,7 @@ const register = async (req, res) => {
 
         if (userExists) throw new Error('user already exist');
 
-        const userCreate = await models.user.create({
-            email: req.body.email,
-            password: req.body.password,
-            pseudo: req.body.pseudo,
-            birthday: req.body.birthday,
-            validCGU: req.body.validCGU,
-            validPrivacyPolicy: req.body.validPrivacyPolicy,
-            gender: req.body.gender,
-            nationality: req.body.nationality,
-            profilePictureUrl: req.body.profilePictureUrl
-        });
+        const userCreate = await models.user.create(req.body);
         if (!userCreate) throw new Error ("Error in creation user");
         try {
             //Launch function login in model user
@@ -140,6 +134,6 @@ const refresh = async (req, res) => {
 
 app.post('/register', register);
 app.post('/login', login);
-app.post('/refresh_token', refresh)
+app.post('/refresh_token', refresh);
 
 export default app;

@@ -36,6 +36,10 @@ export default (sequelize, DataTypes) => {
             //For recovery password
             linkRandom: {type: DataTypes.TEXT, allowNull: true},
             linkConfirmationEmail: {type: DataTypes.STRING, allowNull: true},
+
+            //2. User information
+            lastname: { type: DataTypes.STRING, allowNull: true },
+            firstname: { type: DataTypes.STRING, allowNull: true },
             gender: { type: DataTypes.ENUM("male", "female"), allowNull: true },
             nationality: { type: DataTypes.STRING, allowNull: true },
             birthday: { type: DataTypes.TEXT, allowNull: true },
